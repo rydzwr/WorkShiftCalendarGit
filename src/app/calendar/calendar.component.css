@@ -1,0 +1,35 @@
+td {
+  text-align: center;
+  font-size: 30px;
+  color: gray;
+  border: 2px solid;
+  border-color: gray;
+  border-radius: 20px;
+}
+
+.day {
+  margin-bottom: 15px;
+}
+
+.activeMonth {
+  color: black;
+}
+
+.activeDay {
+  color: red;
+}
+
+th {
+  text-align: center;
+  font-size: 16px;
+}
+
+h1 {
+  text-align: center;
+}
+
+table {
+  height: 100%;
+  width: 100%;
+}
+

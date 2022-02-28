@@ -1,0 +1,26 @@
+<div style="display: flex; justify-content: space-between;">
+  <button mat-button color="primary" (click)="prevMonth()"><mat-icon>arrow_left_alt</mat-icon></button>
+  <h1>{{ activeMonth | date: "MMMM y" }}</h1>
+  <button mat-button color="primary" (click)="nextMonth()"><mat-icon>arrow_right_alt</mat-icon></button>
+</div>
+
+<table class="center">
+  <tr>
+    <th *ngFor="let day of daysOfWeek">{{ day }}</th>
+  </tr>
+  <tr *ngFor="let week of [0, 1, 2, 3, 4, 5]">
+    <td
+      *ngFor="let day of days | slice: week * 7:(week + 1) * 7"
+      [class.activeMonth]="day.activeMonth"
+      [class.activeDay]="day.date.getTime() === today.getTime()"
+    >
+      <span class="day">{{ day.day }}</span>
+      <div class="center">
+        <mat-chip-list>
+          <mat-chip color="primary" selected>Nocka</mat-chip>
+          <mat-chip color="accent" selected>8h</mat-chip>
+        </mat-chip-list>
+      </div>
+    </td>
+  </tr>
+</table>
