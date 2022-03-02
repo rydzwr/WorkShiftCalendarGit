@@ -1,7 +1,11 @@
-<div style="display: flex; justify-content: space-between;">
-  <button mat-button color="primary" (click)="prevMonth()"><mat-icon>arrow_left_alt</mat-icon></button>
+<div class="months_navbar">
+  <button mat-button color="primary" (click)="prevMonth()" class="arrow_left">
+    <mat-icon>arrow_right_alt</mat-icon>
+  </button>
   <h1>{{ activeMonth | date: "MMMM y" }}</h1>
-  <button mat-button color="primary" (click)="nextMonth()"><mat-icon>arrow_right_alt</mat-icon></button>
+  <button mat-button color="primary" (click)="nextMonth()" class="arrow_right">
+    <mat-icon>arrow_right_alt</mat-icon>
+  </button>
 </div>
 
 <table class="center">
@@ -14,13 +18,19 @@
       [class.activeMonth]="day.activeMonth"
       [class.activeDay]="day.date.getTime() === today.getTime()"
     >
-      <span class="day">{{ day.day }}</span>
-      <div class="center">
+      <span>{{ day.day }}</span>
+      <div class="chips">
+      <div class="mat_chip_shift">
         <mat-chip-list>
-          <mat-chip color="primary" selected>Nocka</mat-chip>
-          <mat-chip color="accent" selected>8h</mat-chip>
+          <mat-chip>Night</mat-chip>
         </mat-chip-list>
       </div>
+      <div class="mat_chip_hours">
+        <mat-chip-list>
+          <mat-chip>8H</mat-chip>
+        </mat-chip-list>
+      </div>
+    </div>
     </td>
   </tr>
 </table>

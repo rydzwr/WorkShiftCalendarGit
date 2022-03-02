@@ -2,17 +2,12 @@ td {
   text-align: center;
   font-size: 30px;
   color: gray;
-  border: 2px solid;
   border-color: gray;
   border-radius: 20px;
 }
 
-.day {
-  margin-bottom: 15px;
-}
-
 .activeMonth {
-  color: black;
+  color: rgb(224, 224, 224);
 }
 
 .activeDay {
@@ -26,6 +21,10 @@ th {
 
 h1 {
   text-align: center;
+  color: rgb(206, 206, 206);
+  margin-top: 35px;
+  font-family: sans-serif;
+  font-weight: bold;
 }
 
 table {
@@ -33,3 +32,45 @@ table {
   width: 100%;
 }
 
+.center {
+  margin: auto;
+  color: white;
+}
+
+.months_navbar {
+  display: flex;
+  justify-content: space-between;
+}
+
+.arrow_right {
+  color: rebeccapurple;
+}
+
+.arrow_left {
+  color: rebeccapurple;
+  transform: rotateY(180deg);
+}
+
+.months_navbar mat-icon {
+  width: 100px;
+  height: 100px;
+  font-size: 100px;
+}
+
+.chips {
+  display: flex;
+  justify-content:center;
+  margin-top: 20px;
+}
+
+.mat_chip_shift mat-chip {
+  background-color: rebeccapurple;
+  font-size: 13px;
+  margin: 5px;
+}
+
+.mat_chip_hours mat-chip {
+  background-color: rgb(53, 39, 66);
+  font-size: 13px;
+  margin: 5px;
+}

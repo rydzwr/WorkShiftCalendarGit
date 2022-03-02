@@ -1,0 +1,19 @@
+<div style="display: flex; justify-content: space-between">
+  <div style="width: 70%; height: 70%; margin: auto; text-align: center">
+    <button class="center_text" mat-fab routerLink="/home">
+      <mat-icon>home</mat-icon>
+    </button>
+  </div>
+  <div style="width: 70%; height: 70%; margin: auto; text-align: center">
+    <button class="center_text" mat-fab>
+      <mat-icon>plus</mat-icon>
+    </button>
+  </div>
+</div>
+
+<mat-list>
+  <mat-list-item *ngFor="let shift of shifts">
+    <mat-icon [ngStyle]="{ 'color': shift.color }" matListIcon>folder</mat-icon>
+    <h3 matLine> {{ shift.name }} </h3>
+  </mat-list-item>
+</mat-list>
