@@ -16,5 +16,4 @@ export class ShiftEditorComponent implements OnInit {
   ngOnInit(): void {
     this._shiftService.getShifts().subscribe(shifts => this.shifts = shifts);
   }
-
 }

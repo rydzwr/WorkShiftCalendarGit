@@ -1,1 +1,27 @@
-<p>hours-editor works!</p>
+<div>
+  <mat-list class="hours_list">
+    <mat-list-item *ngFor="let hour of hours">
+      <div class="icon">
+        <mat-icon [ngStyle]="{ color: hour.color }" matListIcon
+          >watch_later</mat-icon
+        >
+      </div>
+      <div class="hours_count">
+        <h3 matLine>{{ hour.name }}</h3>
+      </div>
+    </mat-list-item>
+  </mat-list>
+</div>
+
+<div class="nav_buttons">
+  <div>
+    <button mat-fab routerLink="/home">
+      <mat-icon>home</mat-icon>
+    </button>
+  </div>
+  <div>
+    <button mat-fab>
+      <mat-icon>add</mat-icon>
+    </button>
+  </div>
+</div>

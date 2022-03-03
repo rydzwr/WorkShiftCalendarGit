@@ -1,0 +1,26 @@
+.nav_buttons {
+  display: flex;
+  justify-content: space-between;
+  position: sticky;
+  top: 70%;
+  margin-left: 30%;
+  margin-right: 30%;
+}
+
+.hours_list {
+  position: absolute;
+  margin-top: 4%;
+  margin-left: 50%;
+  margin-right: 50%;
+}
+
+.icon {
+  position: absolute;
+  transform: translate(-50%, -50%);
+}
+
+.hours_count {
+  position: relative;
+  top: 35px;
+  transform: translate(-50%, -40%);
+}

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { HourService } from '../hour.service';
+import { Hour } from './hours';
 
 @Component({
   selector: 'app-hours-editor',
@@ -7,9 +9,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HoursEditorComponent implements OnInit {
 
-  constructor() { }
+  hours: Hour[] = [];
+
+  constructor(private _hourService: HourService) { }
 
   ngOnInit(): void {
+    this._hourService.getHours().subscribe(hours => this.hours = hours);
   }
-
 }
