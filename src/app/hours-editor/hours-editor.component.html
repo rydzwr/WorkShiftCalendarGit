@@ -1,27 +1,32 @@
 <div>
   <mat-list class="hours_list">
-    <mat-list-item *ngFor="let hour of hours">
+    <mat-list-item *ngFor="let hour of hours" (click)="deleteHour(hour.id)">
       <div class="icon">
-        <mat-icon [ngStyle]="{ color: hour.color }" matListIcon
-          >watch_later</mat-icon
-        >
+        <mat-icon [ngStyle]="{ color: hour.color }" matListIcon>watch_later</mat-icon>
       </div>
       <div class="hours_count">
         <h3 matLine>{{ hour.name }}</h3>
+      </div>
+    </mat-list-item>
+    <mat-list-item *ngIf="newHour" (focusout)="addHour()">
+      <div class="icon">
+        <mat-icon [ngStyle]="{ color: newHour.color }" matListIcon [(colorPicker)]="newHour.color" [cpAlphaChannel]="'disabled'" [cpPosition]="'bottom'">watch_later</mat-icon>
+      </div>
+      <div class="hours_count">
+        <input matInput placeholder="hours count..." [(ngModel)]="newHour.name">
       </div>
     </mat-list-item>
   </mat-list>
 </div>
 
 <div class="nav_buttons">
-  <div>
     <button mat-fab routerLink="/home">
       <mat-icon>home</mat-icon>
     </button>
-  </div>
-  <div>
-    <button mat-fab>
+    <button mat-fab (click)="showNewHour()">
       <mat-icon>add</mat-icon>
     </button>
-  </div>
+    <button mat-fab (click)="deleteMode = !deleteMode">
+      <mat-icon>{{ (deleteMode) ? 'highlight_off' : 'delete' }}</mat-icon>
+    </button>
 </div>

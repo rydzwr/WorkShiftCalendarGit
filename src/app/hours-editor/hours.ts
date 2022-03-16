@@ -1,5 +1,5 @@
 export interface Hour {
-  color: String;
-  name: String;
-  id: Number;
+  color: string;
+  name: string;
+  id: number;
 }

@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -15,6 +14,8 @@ import { SettingsComponent } from './settings/settings.component';
 import {MatListModule} from '@angular/material/list';
 import {MatBottomSheetModule} from '@angular/material/bottom-sheet';
 import { HomeComponent } from './home/home.component';
+import { ColorPickerModule } from 'ngx-color-picker';
+import {MatInputModule} from '@angular/material/input';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,9 @@ import { HomeComponent } from './home/home.component';
     MatButtonModule,
     MatIconModule,
     MatListModule,
-    MatBottomSheetModule
+    MatBottomSheetModule,
+    ColorPickerModule,
+    MatInputModule
   ],
   providers: [ ],
   bootstrap: [AppComponent]

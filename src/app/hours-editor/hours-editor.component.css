@@ -9,7 +9,7 @@
 
 .hours_list {
   position: absolute;
-  margin-top: 4%;
+  margin-top: 8%;
   margin-left: 50%;
   margin-right: 50%;
 }
@@ -21,6 +21,7 @@
 
 .hours_count {
   position: relative;
-  top: 35px;
+  top: 30px;
   transform: translate(-50%, -40%);
+  z-index: 0;
 }
