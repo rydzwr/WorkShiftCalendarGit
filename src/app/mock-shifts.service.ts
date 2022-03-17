@@ -1,21 +1,24 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable, of } from 'rxjs';
 import { Shift } from './shift-editor/shift';
+import { ShiftsService } from './shifts.service';
 
-@Injectable({
-  providedIn: 'root'
-})
-export class ShiftService {
+@Injectable()
+export class MockShiftsService extends ShiftsService {
   private shiftsSubject: BehaviorSubject<Shift[]>;
+  private nextId: number;
 
   constructor() {
+    super();
+
     const mockShifts = [
-      {id: 1, name: "morning", color: "#FFC300"},
-      {id: 2, name: "afternoon", color: "#FF5733"},
-      {id: 3, name: "night", color: "#C70039"},
-      {id: 4, name: "free", color: "#09B730"}
+      {id: 0, name: "morning", color: "#FFC300"},
+      {id: 1, name: "afternoon", color: "#FF5733"},
+      {id: 2, name: "night", color: "#C70039"},
+      {id: 3, name: "free", color: "#09B730"}
     ];
 
+    this.nextId = 4;
     this.shiftsSubject = new BehaviorSubject<Shift[]>(mockShifts);
   }
 
@@ -28,6 +31,7 @@ export class ShiftService {
   }
 
   addShift(newShift: Shift) {
+    newShift.id = this.nextId++;
     this.shiftsSubject.next([... this.shiftsSubject.value, newShift]);
   }
 

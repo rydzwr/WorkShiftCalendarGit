@@ -16,6 +16,9 @@ import {MatBottomSheetModule} from '@angular/material/bottom-sheet';
 import { HomeComponent } from './home/home.component';
 import { ColorPickerModule } from 'ngx-color-picker';
 import {MatInputModule} from '@angular/material/input';
+import { ShiftsService } from './shifts.service';
+import { MockShiftsService } from './mock-shifts.service';
+import { LocalStorageShiftsService } from './local-storage-shifts.service';
 
 @NgModule({
   declarations: [
@@ -39,7 +42,7 @@ import {MatInputModule} from '@angular/material/input';
     ColorPickerModule,
     MatInputModule
   ],
-  providers: [ ],
+  providers: [ { provide: ShiftsService, useClass: LocalStorageShiftsService } ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

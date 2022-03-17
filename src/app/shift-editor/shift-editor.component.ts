@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ShiftService } from '../shift.service';
+import { ShiftsService } from '../shifts.service';
 import { Shift } from './shift';
 
 @Component({
@@ -13,7 +13,7 @@ export class ShiftEditorComponent implements OnInit {
   newShift: Shift | undefined = undefined;
   deleteMode: Boolean = false;
 
-  constructor(private _shiftService: ShiftService) { }
+  constructor(private _shiftService: ShiftsService) { }
 
   ngOnInit(): void {
     this._shiftService.getShifts().subscribe(shifts => this.shifts = shifts);
