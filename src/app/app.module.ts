@@ -17,8 +17,9 @@ import { HomeComponent } from './home/home.component';
 import { ColorPickerModule } from 'ngx-color-picker';
 import {MatInputModule} from '@angular/material/input';
 import { ShiftsService } from './shifts.service';
-import { MockShiftsService } from './mock-shifts.service';
+import { HourService } from './hour.service';
 import { LocalStorageShiftsService } from './local-storage-shifts.service';
+import { LocalStorageHoursService } from './local-storage-hours.service';
 
 @NgModule({
   declarations: [
@@ -42,7 +43,7 @@ import { LocalStorageShiftsService } from './local-storage-shifts.service';
     ColorPickerModule,
     MatInputModule
   ],
-  providers: [ { provide: ShiftsService, useClass: LocalStorageShiftsService } ],
+  providers: [ { provide: ShiftsService, useClass: LocalStorageShiftsService }, { provide: HourService, useClass: LocalStorageHoursService } ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
