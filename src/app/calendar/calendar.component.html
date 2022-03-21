@@ -19,18 +19,18 @@
       [class.activeDay]="day.date.getTime() === today.getTime()"
     >
       <span>{{ day.day }}</span>
-      <div class="chips">
-      <div class="mat_chip_shift">
-        <mat-chip-list>
-          <mat-chip>Night</mat-chip>
-        </mat-chip-list>
+      <div class="chips" *ngIf="day.entry">
+        <div class="mat_chip_shift">
+          <mat-chip-list>
+            <mat-chip>{{ day.entry.shiftId }}</mat-chip>
+          </mat-chip-list>
+        </div>
+        <div class="mat_chip_hours">
+          <mat-chip-list>
+            <mat-chip>{{ day.entry.hoursId }}</mat-chip>
+          </mat-chip-list>
+        </div>
       </div>
-      <div class="mat_chip_hours">
-        <mat-chip-list>
-          <mat-chip>8H</mat-chip>
-        </mat-chip-list>
-      </div>
-    </div>
     </td>
   </tr>
 </table>
