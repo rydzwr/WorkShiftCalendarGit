@@ -19,17 +19,27 @@
       [class.activeDay]="day.date.getTime() === today.getTime()"
     >
       <span>{{ day.day }}</span>
-      <div class="chips" *ngIf="day.entry">
-        <div class="mat_chip_shift">
-          <mat-chip-list>
-            <mat-chip>{{ day.entry.shiftId }}</mat-chip>
-          </mat-chip-list>
-        </div>
-        <div class="mat_chip_hours">
-          <mat-chip-list>
-            <mat-chip>{{ day.entry.hoursId }}</mat-chip>
-          </mat-chip-list>
-        </div>
+      <div class="chips">
+          <!-- <mat-chip-list>
+            <mat-chip (click)="selectShift(day)">{{ (day.entry) && (day.entry.shift) ? day.entry.shift.name : '' }}</mat-chip>
+          </mat-chip-list> -->
+          <div
+            class="calendar-chip"
+            [ngStyle]="{ 'background-color': (day.entry && day.entry.shift) ? day.entry.shift.color : 'white' }"
+            (click)="selectShift(day)"
+          >
+            {{ (day.entry && day.entry.shift) ? day.entry.shift.name : '' }}
+          </div>
+          <!-- <mat-chip-list>
+            <mat-chip (click)="selectHours(day)">{{ (day.entry) && (day.entry.hours) ? day.entry.hours.name : '' }}</mat-chip>
+          </mat-chip-list> -->
+          <div
+            class="calendar-chip"
+            [ngStyle]="{ 'background-color': (day.entry && day.entry.hours) ? day.entry.hours.color : 'white' }"
+            (click)="selectHours(day)"
+          >
+            {{ (day.entry && day.entry.hours) ? day.entry.hours.name : '' }}
+          </div>
       </div>
     </td>
   </tr>

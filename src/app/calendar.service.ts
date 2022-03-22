@@ -6,7 +6,7 @@ import { CalendarEntry } from './calendar/calendar-entry';
 export abstract class CalendarService {
   abstract getEntries(start: Date, end: Date): CalendarEntry[];
   abstract getEntry(id: number): CalendarEntry | undefined;
-  abstract addEntry(newEntry: CalendarEntry): void;
-  abstract updateEntry(id: number, entry: CalendarEntry): void;
+  abstract addEntry(newEntry: CalendarEntry): CalendarEntry | undefined;
+  abstract updateEntry(id: number, entry: CalendarEntry): CalendarEntry | undefined;
   abstract deleteEntry(id: number): void;
 }

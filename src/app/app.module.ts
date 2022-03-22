@@ -22,6 +22,9 @@ import { LocalStorageShiftsService } from './local-storage-shifts.service';
 import { LocalStorageHoursService } from './local-storage-hours.service';
 import { CalendarService } from './calendar.service';
 import { MockCalendarService } from './mock-calendar.service';
+import { SelectorDialogComponent } from './selector-dialog/selector-dialog.component';
+import {MatDialogModule} from '@angular/material/dialog';
+import { LocalStorageCalendarService } from './local-storage-calendar.service';
 
 @NgModule({
   declarations: [
@@ -31,6 +34,7 @@ import { MockCalendarService } from './mock-calendar.service';
     HoursEditorComponent,
     SettingsComponent,
     HomeComponent,
+    SelectorDialogComponent,
   ],
   imports: [
     BrowserModule,
@@ -44,9 +48,10 @@ import { MockCalendarService } from './mock-calendar.service';
     MatBottomSheetModule,
     ColorPickerModule,
     MatInputModule,
+    MatDialogModule
   ],
   providers: [
-    { provide: CalendarService, useClass: MockCalendarService },
+    { provide: CalendarService, useClass: LocalStorageCalendarService },
     { provide: ShiftsService, useClass: LocalStorageShiftsService },
     { provide: HourService, useClass: LocalStorageHoursService },
   ],
