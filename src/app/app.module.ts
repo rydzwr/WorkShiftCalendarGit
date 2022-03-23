@@ -25,6 +25,7 @@ import { MockCalendarService } from './mock-calendar.service';
 import { SelectorDialogComponent } from './selector-dialog/selector-dialog.component';
 import {MatDialogModule} from '@angular/material/dialog';
 import { LocalStorageCalendarService } from './local-storage-calendar.service';
+import { IonicModule } from '@ionic/angular';
 
 @NgModule({
   declarations: [
@@ -48,7 +49,8 @@ import { LocalStorageCalendarService } from './local-storage-calendar.service';
     MatBottomSheetModule,
     ColorPickerModule,
     MatInputModule,
-    MatDialogModule
+    MatDialogModule,
+    IonicModule.forRoot()
   ],
   providers: [
     { provide: CalendarService, useClass: LocalStorageCalendarService },

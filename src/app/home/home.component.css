@@ -1,0 +1,13 @@
+.calendar
+{
+  text-align: center;
+  height: 80%;
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+.settings-button
+{
+  margin-top: 5%;
+  transform: translate(50%, 50%);
+}

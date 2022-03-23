@@ -2,19 +2,6 @@
 
 html,
 body {
-  height: 100%;
-  margin: 0;
   background-color: rgb(37, 37, 37);
 }
 
-body {
-  margin: 0;
-}
-
-.center {
-  margin: auto !important;
-}
-
-.center_text {
-  text-align: center !important;
-}

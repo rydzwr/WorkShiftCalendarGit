@@ -1,45 +1,45 @@
 <div class="months_navbar">
-  <button mat-button color="primary" (click)="prevMonth()" class="arrow_left">
-    <mat-icon>arrow_right_alt</mat-icon>
-  </button>
-  <h1>{{ activeMonth | date: "MMMM y" }}</h1>
-  <button mat-button color="primary" (click)="nextMonth()" class="arrow_right">
-    <mat-icon>arrow_right_alt</mat-icon>
-  </button>
+  <ion-icon
+    name="arrow-back-outline"
+    (click)="prevMonth()"
+    class="arrow-left"
+  ></ion-icon>
+  <h1 class="active-month">{{ activeMonth | date: "MMMM y" }}</h1>
+  <ion-icon
+    name="arrow-forward-outline"
+    (click)="nextMonth()"
+    class="arrow-right"
+  ></ion-icon>
 </div>
 
-<table class="center">
-  <tr>
+<table class="calendar">
+  <tr class="week-days">
     <th *ngFor="let day of daysOfWeek">{{ day }}</th>
   </tr>
   <tr *ngFor="let week of [0, 1, 2, 3, 4, 5]">
-    <td
+    <td class="x"
       *ngFor="let day of days | slice: week * 7:(week + 1) * 7"
       [class.activeMonth]="day.activeMonth"
       [class.activeDay]="day.date.getTime() === today.getTime()"
     >
       <span>{{ day.day }}</span>
-      <div class="chips">
-          <!-- <mat-chip-list>
-            <mat-chip (click)="selectShift(day)">{{ (day.entry) && (day.entry.shift) ? day.entry.shift.name : '' }}</mat-chip>
-          </mat-chip-list> -->
-          <div
-            class="calendar-chip"
-            [ngStyle]="{ 'background-color': (day.entry && day.entry.shift) ? day.entry.shift.color : 'white' }"
-            (click)="selectShift(day)"
-          >
-            {{ (day.entry && day.entry.shift) ? day.entry.shift.name : '' }}
-          </div>
-          <!-- <mat-chip-list>
-            <mat-chip (click)="selectHours(day)">{{ (day.entry) && (day.entry.hours) ? day.entry.hours.name : '' }}</mat-chip>
-          </mat-chip-list> -->
-          <div
-            class="calendar-chip"
-            [ngStyle]="{ 'background-color': (day.entry && day.entry.hours) ? day.entry.hours.color : 'white' }"
-            (click)="selectHours(day)"
-          >
-            {{ (day.entry && day.entry.hours) ? day.entry.hours.name : '' }}
-          </div>
+      <div class="shift-chip"
+        [ngStyle]="{
+          'background-color':
+            day.entry && day.entry.shift ? day.entry.shift.color : 'darkmagenta'
+        }"
+        (click)="selectShift(day)"
+      >
+        {{ day.entry && day.entry.shift ? day.entry.shift.name : "" }}
+      </div>
+      <div class="hour-chip"
+        [ngStyle]="{
+          'background-color':
+            day.entry && day.entry.hours ? day.entry.hours.color : 'darkmagenta'
+        }"
+        (click)="selectHours(day)"
+      >
+        {{ day.entry && day.entry.hours ? day.entry.hours.name : "" }}
       </div>
     </td>
   </tr>
