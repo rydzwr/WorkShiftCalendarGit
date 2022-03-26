@@ -1,5 +1,6 @@
 
-.months_navbar {
+.months-navbar
+{
   background-color: rgb(19, 19, 19);
   display: flex;
   justify-content: space-between;
@@ -12,7 +13,8 @@
   color: rgb(206, 206, 206);
 }
 
-.arrow-right, .arrow-left {
+.arrow-right, .arrow-left
+ {
   width: 50px;
   height: 50px;
   color: rebeccapurple;
@@ -27,7 +29,8 @@
 }
 
 /*inactive days in calendar*/
-td {
+td
+{
   font-size: 30px;
   color: gray;
   border: none;
@@ -37,26 +40,32 @@ td {
 {
   height: 100%;
   width: 100%;
+  margin-right: 40%;
 }
 
-.shift-chip {
+.shift-chip
+{
   border-radius: 20px;
   width: 80px;
   height: 20px;
   background-color:darkmagenta;
 }
 
-.hour-chip {
+.hour-chip
+{
   border-radius: 20px;
   width: 40px;
   height: 20px;
   background-color:darkmagenta;
 }
 
-.activeMonth {
+.activeMonth
+{
   color: rgb(224, 224, 224);
+  min-width: 120px;
 }
 
-.activeDay {
+.activeDay
+{
   color: red;
 }

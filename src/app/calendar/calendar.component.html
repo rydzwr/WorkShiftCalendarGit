@@ -1,4 +1,4 @@
-<div class="months_navbar">
+<div class="months-navbar">
   <ion-icon
     name="arrow-back-outline"
     (click)="prevMonth()"
@@ -17,7 +17,7 @@
     <th *ngFor="let day of daysOfWeek">{{ day }}</th>
   </tr>
   <tr *ngFor="let week of [0, 1, 2, 3, 4, 5]">
-    <td class="x"
+    <td
       *ngFor="let day of days | slice: week * 7:(week + 1) * 7"
       [class.activeMonth]="day.activeMonth"
       [class.activeDay]="day.date.getTime() === today.getTime()"
