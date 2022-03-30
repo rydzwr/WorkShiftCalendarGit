@@ -6,8 +6,18 @@
   margin-right: 10%;
 }
 
+@media only screen and (max-width: 600px) {
+  .calendar {
+    margin-left: 2%;
+    margin-right: 2%;
+  }
+}
+
 .settings-button
 {
-  margin-top: 5%;
-  text-align: center;
+  position: fixed;
+  margin: auto;
+  bottom: 2vh;
+  left: 0;
+  right: 0;
 }

@@ -23,23 +23,29 @@
       [class.activeDay]="day.date.getTime() === today.getTime()"
     >
       <span>{{ day.day }}</span>
-      <div class="shift-chip"
+      <div
+        class="shift-chip"
         [ngStyle]="{
           'background-color':
             day.entry && day.entry.shift ? day.entry.shift.color : 'darkmagenta'
         }"
         (click)="selectShift(day)"
       >
-        {{ day.entry && day.entry.shift ? day.entry.shift.name : "" }}
+        <span class="vert-center">{{
+          day.entry && day.entry.shift ? day.entry.shift.name : ""
+        }}</span>
       </div>
-      <div class="hour-chip"
+      <div
+        class="hour-chip"
         [ngStyle]="{
           'background-color':
             day.entry && day.entry.hours ? day.entry.hours.color : 'darkmagenta'
         }"
         (click)="selectHours(day)"
       >
-        {{ day.entry && day.entry.hours ? day.entry.hours.name : "" }}
+        <span class="vert-center">{{
+          day.entry && day.entry.hours ? day.entry.hours.name : ""
+        }}</span>
       </div>
     </td>
   </tr>
