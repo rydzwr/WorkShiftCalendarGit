@@ -8,6 +8,7 @@
   align-items: center;
   margin-bottom: 2vh;
   margin-top: 2vh;
+  box-shadow: 0 4px 7px rgba(0, 0, 0, 0.4);
 }
 
 .active-month
@@ -21,8 +22,8 @@
  {
   width: 50px;
   height: 50px;
-  color: rebeccapurple;
   cursor: pointer;
+  color: rgb(206, 206, 206);
 }
 
 .week-days
@@ -30,6 +31,8 @@
   text-align: center;
   font-size: 140%;
   color: rgb(206, 206, 206);
+  box-shadow: 0 4px 7px rgba(0, 0, 0, 0.4);
+  border-radius: 1vh;
 }
 
 /*inactive days in calendar*/
@@ -38,11 +41,14 @@ td
   font-size: 4vh;
   color: gray;
   border: none;
+  box-shadow: 0 4px 7px rgba(0, 0, 0, 0.4);
+  border-radius: 1vh;
 }
 
 th
 {
   font-size: 1vw;
+  box-shadow: 0 4px 7px rgba(0, 0, 0, 0.4);
 }
 
 @media only screen and (max-width: 1200px) {
@@ -65,17 +71,21 @@ th
   width: 95%;
   max-width: 100px;
   height: 25px;
-  background-color:darkmagenta;
+  background-color:rgb(53, 53, 53);
   margin: auto;
   margin-top: 1vh;
   margin-bottom: 1vh;
-  font-size: 2vh;
+  font-size: 1.5vh;
+  box-shadow: 0 4px 7px rgba(0, 0, 0, 0.4);
+  font-weight: bold;
+  text-shadow: 0 4px 7px rgba(0, 0, 0, 0.4);
 }
 
 .vert-center {
   display: inline-block;
   vertical-align: middle;
   line-height: normal;
+  text-shadow: 0 4px 7px rgba(0, 0, 0, 0.4);
 }
 
 .hour-chip
@@ -84,9 +94,12 @@ th
   width: 95%;
   max-width: 50px;
   height: 25px;
-  background-color:darkmagenta;
+  background-color:rgb(53, 53, 53);
   margin: auto;
-  font-size: 2vh;
+  font-size: 1.5vh;
+  box-shadow: 0 4px 7px rgba(0, 0, 0, 0.4);
+  font-weight: bold;
+  text-shadow: 0 4px 7px rgba(0, 0, 0, 0.4);
 }
 
 .activeMonth
@@ -96,5 +109,5 @@ th
 
 .activeDay
 {
-  color: red;
+  color: rgb(180, 0, 0);
 }

@@ -1,10 +1,12 @@
 .nav_buttons {
   display: flex;
   justify-content: space-between;
-  position: sticky;
-  top: 70%;
-  margin-left: 30%;
-  margin-right: 30%;
+  margin-left: 2vw;
+  margin-right: 2vw;
+  position: fixed;
+  bottom: 2vh;
+  left: 0;
+  right: 0;
 }
 
 .hours_list {
@@ -24,4 +26,5 @@
   top: 30px;
   transform: translate(-50%, -40%);
   z-index: 0;
+  color: rgb(187, 187, 187);
 }

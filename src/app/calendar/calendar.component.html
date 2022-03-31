@@ -27,7 +27,7 @@
         class="shift-chip"
         [ngStyle]="{
           'background-color':
-            day.entry && day.entry.shift ? day.entry.shift.color : 'darkmagenta'
+            day.entry && day.entry.shift ? day.entry.shift.color : 'rgb(53, 53, 53)'
         }"
         (click)="selectShift(day)"
       >
@@ -39,7 +39,7 @@
         class="hour-chip"
         [ngStyle]="{
           'background-color':
-            day.entry && day.entry.hours ? day.entry.hours.color : 'darkmagenta'
+            day.entry && day.entry.hours ? day.entry.hours.color : 'rgb(53, 53, 53)'
         }"
         (click)="selectHours(day)"
       >
