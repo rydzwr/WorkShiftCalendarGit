@@ -1,32 +1,30 @@
-<div>
-  <mat-list class="shift_list">
+<div class="content">
+  <mat-list>
     <mat-list-item *ngFor="let shift of shifts" (click)="deleteShift(shift.id)">
-      <div class="icon">
+      <div class="shift">
         <mat-icon [ngStyle]="{ color: shift.color }" matListIcon>work</mat-icon>
-      </div>
-      <div class="shift_name">
-        <h3 matLine>{{ shift.name }}</h3>
+        <h3 class="shift_name" matLine>{{ shift.name }}</h3>
       </div>
     </mat-list-item>
     <mat-list-item *ngIf="newShift" (focusout)="addShift()">
-      <div class="icon">
-        <mat-icon [ngStyle]="{ color: newShift.color }" matListIcon [(colorPicker)]="newShift.color" [cpAlphaChannel]="'disabled'" [cpPosition]="'bottom'">work</mat-icon>
-      </div>
-      <div class="shift_name">
-        <input matInput placeholder="shift name..." [(ngModel)]="newShift.name">
+      <div class="shift">
+        <mat-icon [ngStyle]="{ color: newShift.color }" matListIcon [(colorPicker)]="newShift.color"
+                  [cpAlphaChannel]="'disabled'" [cpPosition]="'bottom'">work
+        </mat-icon>
+        <input class="shift_name" matInput placeholder="shift name..." [(ngModel)]="newShift.name">
       </div>
     </mat-list-item>
   </mat-list>
 </div>
 
 <div class="nav_buttons">
-    <button mat-fab routerLink="/home">
-      <mat-icon>home</mat-icon>
-    </button>
-    <button mat-fab (click)="showNewShift()">
-      <mat-icon>add</mat-icon>
-    </button>
-    <button mat-fab (click)="deleteMode = !deleteMode">
-      <mat-icon>{{ (deleteMode) ? 'highlight_off' : 'delete' }}</mat-icon>
-    </button>
+  <button mat-fab routerLink="/home">
+    <mat-icon>home</mat-icon>
+  </button>
+  <button mat-fab (click)="showNewShift()">
+    <mat-icon>add</mat-icon>
+  </button>
+  <button mat-fab (click)="deleteMode = !deleteMode">
+    <mat-icon>{{ (deleteMode) ? 'highlight_off' : 'delete' }}</mat-icon>
+  </button>
 </div>

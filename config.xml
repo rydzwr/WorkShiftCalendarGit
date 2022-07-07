@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="io.cordova.hellocordova" version="1.0.0">
+  <name>Work Shift Calendar</name>
+  <description>Written by rydzwr</description>
+  <author email="rydzwr@gmail.com">
+    Kacper Rydzynski
+  </author>
+  <content src="index.html"/>
+  <allow-intent href="http://*/*"/>
+  <allow-intent href="https://*/*"/>
+  <platform name="android">
+    <icon src="src/assets/icon.png" density="mdpi"/>
+  </platform>
+</widget>
+
+

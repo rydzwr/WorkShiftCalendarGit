@@ -1,8 +1,8 @@
 import { Component, Inject, Input, OnInit } from '@angular/core';
-import { HourService } from '../hour.service';
+import { HourService } from '../services/hour.service';
 import { Hour } from '../hours-editor/hours';
 import { Shift } from '../shift-editor/shift';
-import { ShiftsService } from '../shifts.service';
+import { ShiftsService } from '../services/shifts.service';
 import { MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
 
 @Component({

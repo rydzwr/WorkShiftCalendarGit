@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { HourService } from '../hour.service';
+import { HourService } from '../services/hour.service';
 import { Hour } from './hours';
 
 @Component({

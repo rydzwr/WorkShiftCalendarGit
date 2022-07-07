@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ShiftsService } from '../shifts.service';
+import { ShiftsService } from '../services/shifts.service';
 import { Shift } from './shift';
 
 @Component({

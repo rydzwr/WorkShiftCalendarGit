@@ -1,6 +1,5 @@
 
-.months-navbar
-{
+.months-navbar {
   background-color: rgb(19, 19, 19);
   display: flex;
   justify-content: space-between;
@@ -8,26 +7,25 @@
   align-items: center;
   margin-bottom: 2vh;
   margin-top: 2vh;
+  height: 40px;
   box-shadow: 0 4px 7px rgba(0, 0, 0, 0.4);
+  padding-left: 2%;
+  padding-right: 2%;
 }
 
-.active-month
-{
-  size: 100%;
+.active-month {
   color: rgb(206, 206, 206);
   margin: 0;
 }
 
-.arrow-right, .arrow-left
- {
-  width: 50px;
-  height: 50px;
+.arrow-right, .arrow-left {
+  width: 30px;
+  height: 30px;
   cursor: pointer;
   color: rgb(206, 206, 206);
 }
 
-.week-days
-{
+.week-days {
   text-align: center;
   font-size: 140%;
   color: rgb(206, 206, 206);
@@ -36,8 +34,7 @@
 }
 
 /*inactive days in calendar*/
-td
-{
+td {
   font-size: 4vh;
   color: gray;
   border: none;
@@ -45,33 +42,29 @@ td
   border-radius: 1vh;
 }
 
-th
-{
+th {
   font-size: 1vw;
   box-shadow: 0 4px 7px rgba(0, 0, 0, 0.4);
 }
 
 @media only screen and (max-width: 1200px) {
-  th
-  {
+  th {
     font-size: 2vw;
   }
 }
 
-.calendar
-{
+.calendar {
   height: 100%;
   width: 100%;
   table-layout: fixed;
 }
 
-.shift-chip
-{
+.shift-chip {
   border-radius: 2vh;
   width: 95%;
   max-width: 100px;
   height: 25px;
-  background-color:rgb(53, 53, 53);
+  background-color: rgb(53, 53, 53);
   margin: auto;
   margin-top: 1vh;
   margin-bottom: 1vh;
@@ -85,16 +78,15 @@ th
   display: inline-block;
   vertical-align: middle;
   line-height: normal;
-  text-shadow: 0 4px 7px rgba(0, 0, 0, 0.4);
+  color: black;
 }
 
-.hour-chip
-{
+.hour-chip {
   border-radius: 20px;
   width: 95%;
   max-width: 50px;
   height: 25px;
-  background-color:rgb(53, 53, 53);
+  background-color: rgb(53, 53, 53);
   margin: auto;
   font-size: 1.5vh;
   box-shadow: 0 4px 7px rgba(0, 0, 0, 0.4);
@@ -102,12 +94,10 @@ th
   text-shadow: 0 4px 7px rgba(0, 0, 0, 0.4);
 }
 
-.activeMonth
-{
+.activeMonth {
   color: rgb(224, 224, 224);
 }
 
-.activeDay
-{
+.activeDay {
   color: rgb(180, 0, 0);
 }

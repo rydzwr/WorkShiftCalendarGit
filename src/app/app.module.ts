@@ -16,15 +16,15 @@ import { MatBottomSheetModule } from '@angular/material/bottom-sheet';
 import { HomeComponent } from './home/home.component';
 import { ColorPickerModule } from 'ngx-color-picker';
 import { MatInputModule } from '@angular/material/input';
-import { ShiftsService } from './shifts.service';
-import { HourService } from './hour.service';
-import { LocalStorageShiftsService } from './local-storage-shifts.service';
-import { LocalStorageHoursService } from './local-storage-hours.service';
-import { CalendarService } from './calendar.service';
-import { MockCalendarService } from './mock-calendar.service';
+import { ShiftsService } from './services/shifts.service';
+import { HourService } from './services/hour.service';
+import { LocalStorageShiftsService } from './services/local-storage-shifts.service';
+import { LocalStorageHoursService } from './services/local-storage-hours.service';
+import { CalendarService } from './services/calendar.service';
+import { MockCalendarService } from './services/mock-calendar.service';
 import { SelectorDialogComponent } from './selector-dialog/selector-dialog.component';
 import {MatDialogModule} from '@angular/material/dialog';
-import { LocalStorageCalendarService } from './local-storage-calendar.service';
+import { LocalStorageCalendarService } from './services/local-storage-calendar.service';
 import { IonicModule } from '@ionic/angular';
 
 @NgModule({

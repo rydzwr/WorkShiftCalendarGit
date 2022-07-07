@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { CalendarService } from '../calendar.service';
+import { CalendarService } from '../services/calendar.service';
 import { CalendarDay } from './calendar-day';
 import { MatDialog } from '@angular/material/dialog';
 import { SelectorDialogComponent } from '../selector-dialog/selector-dialog.component';
