@@ -50,4 +50,16 @@ export class LocalStorageHoursService extends HourService {
     this.localStorage.setItem("hours", JSON.stringify(hours));
     this.hoursSubject.next(hours);
   }
+
+  override updateHourName(id: number, newName: string) {
+    const hoursArray = this.hoursSubject.value;
+    const hour = hoursArray.find((obj) => {
+      return obj.id === id;
+    });
+
+    if (hour){
+      hour.name = newName;
+    }
+    this.localStorage.setItem("shifts", JSON.stringify(hoursArray));
+  }
 }

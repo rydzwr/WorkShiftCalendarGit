@@ -3,7 +3,7 @@
     <mat-list-item *ngFor="let hour of hours" (click)="deleteHour(hour.id)">
       <div class="hour">
         <mat-icon [ngStyle]="{ color: hour.color }" matListIcon>watch_later</mat-icon>
-        <h3 class="hours_count" matLine>{{ hour.name }}</h3>
+        <h3 class="hours_count" (click)="changeHourNameClicked(hour.id)" matLine>{{ hour.name }}</h3>
       </div>
     </mat-list-item>
     <mat-list-item *ngIf="newHour" (focusout)="addHour()">

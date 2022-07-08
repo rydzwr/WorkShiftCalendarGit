@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable, of } from 'rxjs';
-import { Shift } from '../shift-editor/shift';
 import { ShiftsService } from './shifts.service';
+import {Shift} from "../shift-editor/shift";
 
 @Injectable()
 export class MockShiftsService extends ShiftsService {
@@ -49,5 +49,16 @@ export class MockShiftsService extends ShiftsService {
 
     //const index = this.mockShifts.findIndex(s => s.id === id);
     //this.mockShifts.slice(index, 1);
+  }
+
+  override updateShiftName(id: number, newName: string) {
+    const shiftsArray = this.shiftsSubject.value;
+    const shift = shiftsArray.find((obj) => {
+      return obj.id === id;
+    });
+
+    if (shift){
+      shift.name = newName;
+    }
   }
 }

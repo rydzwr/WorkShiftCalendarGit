@@ -3,7 +3,7 @@
     <mat-list-item *ngFor="let shift of shifts" (click)="deleteShift(shift.id)">
       <div class="shift">
         <mat-icon [ngStyle]="{ color: shift.color }" matListIcon>work</mat-icon>
-        <h3 class="shift_name" matLine>{{ shift.name }}</h3>
+        <h3 class="shift_name" (click)="changeShiftNameClicked(shift.id)" matLine>{{ shift.name }}</h3>
       </div>
     </mat-list-item>
     <mat-list-item *ngIf="newShift" (focusout)="addShift()">

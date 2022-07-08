@@ -1,7 +1,7 @@
-import { Injectable } from '@angular/core';
-import { BehaviorSubject, Observable } from 'rxjs';
-import { Shift } from '../shift-editor/shift';
-import { ShiftsService } from './shifts.service';
+import {Injectable} from '@angular/core';
+import {BehaviorSubject, Observable} from 'rxjs';
+import {ShiftsService} from './shifts.service';
+import {Shift} from "../shift-editor/shift";
 
 @Injectable()
 export class LocalStorageShiftsService extends ShiftsService {
@@ -33,7 +33,7 @@ export class LocalStorageShiftsService extends ShiftsService {
 
   addShift(newShift: Shift) {
     newShift.id = this.nextId++;
-    const shiftsArray = [... this.shiftsSubject.value, newShift];
+    const shiftsArray = [...this.shiftsSubject.value, newShift];
     this.localStorage.setItem("shifts", JSON.stringify(shiftsArray));
     this.localStorage.setItem("shifts_id", this.nextId.toFixed(0));
     this.shiftsSubject.next(shiftsArray);
@@ -49,5 +49,17 @@ export class LocalStorageShiftsService extends ShiftsService {
     const shifts = this.shiftsSubject.value.filter(s => s.id !== id)
     this.localStorage.setItem("shifts", JSON.stringify(shifts));
     this.shiftsSubject.next(shifts);
+  }
+
+  override updateShiftName(id: number, newName: string) {
+    const shiftsArray = this.shiftsSubject.value;
+    const shift = shiftsArray.find((obj) => {
+      return obj.id === id;
+    });
+
+    if (shift){
+      shift.name = newName;
+    }
+    this.localStorage.setItem("shifts", JSON.stringify(shiftsArray));
   }
 }
