@@ -51,7 +51,7 @@ export class LocalStorageShiftsService extends ShiftsService {
     this.shiftsSubject.next(shifts);
   }
 
-  override updateShiftName(id: number, newName: string) {
+  updateShiftName(id: number, newName: string) {
     const shiftsArray = this.shiftsSubject.value;
     const shift = shiftsArray.find((obj) => {
       return obj.id === id;
@@ -59,6 +59,18 @@ export class LocalStorageShiftsService extends ShiftsService {
 
     if (shift){
       shift.name = newName;
+    }
+    this.localStorage.setItem("shifts", JSON.stringify(shiftsArray));
+  }
+
+  updateShiftColor(id: number, color: string) {
+    const shiftsArray = this.shiftsSubject.value;
+    const shift = shiftsArray.find((obj) => {
+      return obj.id === id;
+    });
+
+    if (shift){
+      shift.color = color;
     }
     this.localStorage.setItem("shifts", JSON.stringify(shiftsArray));
   }

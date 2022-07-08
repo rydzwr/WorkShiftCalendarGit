@@ -61,4 +61,7 @@ export class MockShiftsService extends ShiftsService {
       shift.name = newName;
     }
   }
+
+  override updateShiftColor(id: number, color: string) {
+  }
 }

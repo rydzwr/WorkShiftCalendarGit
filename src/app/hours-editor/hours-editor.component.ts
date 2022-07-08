@@ -3,6 +3,7 @@ import { HourService } from '../services/hour.service';
 import { Hour } from './hours';
 import {EditNameDialogComponent} from "../edit-name-dialog/edit-name-dialog.component";
 import {MatDialog} from "@angular/material/dialog";
+import {EditColorDialogComponent} from "../edit-color-dialog/edit-color-dialog.component";
 
 @Component({
   selector: 'app-hours-editor',
@@ -33,13 +34,28 @@ export class HoursEditorComponent implements OnInit {
   }
 
   changeHourNameClicked(id: number) {
-    const dialogRef = this.dialog.open(EditNameDialogComponent, {
-      width: '95%'
-    });
-    dialogRef.afterClosed().subscribe((newName: string) => {
-      if (newName && newName.trim() !== '')
-        this._hourService.updateHourName(id, newName);
-    })
+    if (!this.deleteMode)
+    {
+      const dialogRef = this.dialog.open(EditNameDialogComponent, {
+        width: '95%'
+      });
+      dialogRef.afterClosed().subscribe((newName: string) => {
+        if (newName && newName.trim() !== '')
+          this._hourService.updateHourName(id, newName);
+      })
+    }
+  }
+
+  changeHourColorClicked(id: number) {
+    if (!this.deleteMode)
+    {
+      const dialogRef = this.dialog.open(EditColorDialogComponent, {
+        width: '95%'
+      });
+      dialogRef.afterClosed().subscribe((color: string) => {
+        this._hourService.updateHourColor(id, color);
+      })
+    }
   }
 
   deleteHour(id: number) {

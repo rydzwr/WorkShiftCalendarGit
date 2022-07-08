@@ -3,6 +3,7 @@ import { ShiftsService } from '../services/shifts.service';
 import { Shift } from './shift';
 import {MatDialog} from "@angular/material/dialog";
 import {EditNameDialogComponent} from "../edit-name-dialog/edit-name-dialog.component";
+import {EditColorDialogComponent} from "../edit-color-dialog/edit-color-dialog.component";
 
 @Component({
   selector: 'app-shift-editor',
@@ -33,13 +34,28 @@ export class ShiftEditorComponent implements OnInit {
   }
 
   changeShiftNameClicked(id: number) {
-    const dialogRef = this.dialog.open(EditNameDialogComponent, {
-      width: '95%'
-    });
-    dialogRef.afterClosed().subscribe((newName: string) => {
-      if (newName && newName.trim() !== '')
-        this._shiftService.updateShiftName(id, newName);
-    })
+    if (!this.deleteMode)
+    {
+      const dialogRef = this.dialog.open(EditNameDialogComponent, {
+        width: '95%'
+      });
+      dialogRef.afterClosed().subscribe((newName: string) => {
+        if (newName && newName.trim() !== '')
+          this._shiftService.updateShiftName(id, newName);
+      })
+    }
+  }
+
+  changeShiftColorClicked(id: number) {
+    if (!this.deleteMode)
+    {
+      const dialogRef = this.dialog.open(EditColorDialogComponent, {
+        width: '95%'
+      });
+      dialogRef.afterClosed().subscribe((color: string) => {
+        this._shiftService.updateShiftColor(id, color);
+      })
+    }
   }
 
   deleteShift(id: number) {

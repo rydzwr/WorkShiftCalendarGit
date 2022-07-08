@@ -10,4 +10,5 @@ export abstract class HourService {
   abstract updateHour(id: number, hour: Hour): void;
   abstract deleteHour(id: number): void;
   abstract updateHourName(id: number, newName: string): void;
+  abstract updateHourColor(id: number, color: string): void;
 }

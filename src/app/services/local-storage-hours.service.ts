@@ -60,6 +60,18 @@ export class LocalStorageHoursService extends HourService {
     if (hour){
       hour.name = newName;
     }
-    this.localStorage.setItem("shifts", JSON.stringify(hoursArray));
+    this.localStorage.setItem("hours", JSON.stringify(hoursArray));
+  }
+
+  updateHourColor(id: number, color: string) {
+    const hoursArray = this.hoursSubject.value;
+    const hour = hoursArray.find((obj) => {
+      return obj.id === id;
+    });
+
+    if (hour){
+      hour.color = color;
+    }
+    this.localStorage.setItem("hours", JSON.stringify(hoursArray));
   }
 }

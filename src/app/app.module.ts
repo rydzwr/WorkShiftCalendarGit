@@ -27,6 +27,7 @@ import {MatDialogModule} from '@angular/material/dialog';
 import { LocalStorageCalendarService } from './services/local-storage-calendar.service';
 import { IonicModule } from '@ionic/angular';
 import { EditNameDialogComponent } from './edit-name-dialog/edit-name-dialog.component';
+import { EditColorDialogComponent } from './edit-color-dialog/edit-color-dialog.component';
 
 @NgModule({
   declarations: [
@@ -38,6 +39,7 @@ import { EditNameDialogComponent } from './edit-name-dialog/edit-name-dialog.com
     HomeComponent,
     SelectorDialogComponent,
     EditNameDialogComponent,
+    EditColorDialogComponent,
   ],
   imports: [
     BrowserModule,

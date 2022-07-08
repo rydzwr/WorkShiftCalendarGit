@@ -10,4 +10,5 @@ export abstract class ShiftsService {
   abstract updateShift(id: number, shift: Shift): void;
   abstract deleteShift(id: number): void;
   abstract updateShiftName(id: number, newName: string): void;
+  abstract updateShiftColor(id: number, color: string): void;
 }
